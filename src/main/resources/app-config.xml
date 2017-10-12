@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+<bean id="springApplicationContext"
+		class="com.syntel.common.spring.SpringApplicationContext" />
+
+	<bean name="AirShoppingRequestPreparator_16_2"
+		class=" com.syntel.travel.air.ndc.beanbuilder.AirShoppingRequestPreparator_16_2">
+		<property name="requestBuilder">
+			<list>
+				<ref bean="AirShoppingRQRequestBuilder_16.2" />
+				<ref bean="AirShopReqParamsTypeRequestBuilder_16.2" />
+				<ref bean="CoreQueryRequestBuilder_16.2" />
+				<ref bean="MsgDocumentRequestBuilder_16.2" />
+				<ref bean="MsgPartiesTypeRequestBuilder_16.2" />
+				<ref bean="TravelersRequestBuilder_16.2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="ConsoleLogger" class="com.syntel.common.logger.ConsoleLogger" />
+
+	<bean name="AirShoppingServiceInvoker_16_2"
+		class="com.syntel.travel.air.ndc.service.rest.AirShoppingServiceInvoker_16_2" />
+
+	<bean name="AirShoppingRQRequestBuilder_16.2"
+		class="com.syntel.travel.air.ndc.beanbuilder.v16_2.AirShoppingRQRequestBuilder" />
+	<bean name="AirShopReqParamsTypeRequestBuilder_16.2"
+		class="com.syntel.travel.air.ndc.beanbuilder.v16_2.AirShopReqParamsTypeRequestBuilder" />
+	<bean name="CoreQueryRequestBuilder_16.2"
+		class="com.syntel.travel.air.ndc.beanbuilder.v16_2.CoreQueryRequestBuilder" />
+	<bean name="MsgDocumentRequestBuilder_16.2"
+		class="com.syntel.travel.air.ndc.beanbuilder.v16_2.MsgDocumentRequestBuilder" />
+	<bean name="MsgPartiesTypeRequestBuilder_16.2"
+		class="com.syntel.travel.air.ndc.beanbuilder.v16_2.MsgPartiesTypeRequestBuilder" />
+	<bean name="TravelersRequestBuilder_16.2"
+		class="com.syntel.travel.air.ndc.beanbuilder.v16_2.TravelersRequestBuilder" />
+
+</beans> 
